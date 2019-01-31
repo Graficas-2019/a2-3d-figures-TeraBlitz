@@ -7,6 +7,8 @@
 <script src="../libs/gl-matrix/gl-matrix.js"></script>
 
 <script src="3d_figures.js"></script>
+<script src="figures.js"></script>
+
 
 <script type="text/javascript">
           
@@ -18,7 +20,10 @@
 		        initGL(canvas);
 				initShader(gl);
 				// TO DO: create and draw the figures
-				run(gl, []);
+                const dodecahedron = createDodecahedron(gl, [-4, 0, -10], [-0.4, 1.0, 0.1], [0.0, 1.0, 0,0]);
+                const octahedron = createOctahedron(gl, [4, 0, -10], [0, 1, 0]);
+                const pyramid = createPyramid(gl, [0, 0, -10], [0.1, 1.0, 0.2]);
+				run(gl, [dodecahedron, octahedron, pyramid]);
 			}
 	);
 
@@ -27,7 +32,7 @@
 </head>
 <body>
 
-    <canvas id="webglcanvas" style="border: none;" width="500" height="500"></canvas>
+    <canvas id="webglcanvas" style="border: none;" width="700" height="500"></canvas>
 
 </body>
 </html>
